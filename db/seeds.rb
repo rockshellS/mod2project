@@ -12,7 +12,9 @@ rachelle = User.create(name: "Rachelle", user_name: "hirachelle", bio: "This is 
 aaron = User.create(name: "Aaron", user_name: "heyaaron", bio: "This is Aaron's bio!")
 
 listing_one = Listing.create(title: "crockpot", description: "this is a crockpot that i do not want please come pick it up ASAP", category: "kitchen", status: "claimed", owner_id: 1, recipient_id: 2)
-listing_two = Listing.create(title: "crockpot", description: "this is a crockpot that i do not want please come pick it up ASAP", category: "kitchen", status: "not yet claimed", owner_id: 1, recipient_id: nil)
+listing_two = Listing.create(title: "crockpot", description: "a description", category: "a category", status: "not yet claimed", owner_id: 1)
+three = Listing.create(title: "this", description: "is", category: "a", status: "listing", owner_id: 2, recipient_id:3)
+four = Listing.create(title: "one", description: "more", category: "list", status: "ing", owner_id: 2, recipient_id: nil)
 
 new_like = Like.create(liker_id: 2, listing_id:1)
 new_like_two = Like.create(liker_id: 3, listing_id:2)
