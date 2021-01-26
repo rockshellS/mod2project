@@ -23,16 +23,16 @@ ActiveRecord::Schema.define(version: 2021_01_25_213857) do
     t.string "title"
     t.text "description"
     t.string "category"
+    t.boolean "claimed", default: false
     t.integer "owner_id"
     t.integer "recipient_id"
-    t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "user_name"
+    t.string "username"
     t.text "bio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

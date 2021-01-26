@@ -28,8 +28,9 @@
     <%= f.text_area :description %>
     <br>
     <br>
-    <%= f.label "Status" %> 
-    <%= f.text_field :status %>
+    <%= f.label "Owner" %> 
+    <%= f.collection_select :owner_id, User.all, :id, :username %>
+
 
 <%= f.submit %>
 <% end %>
