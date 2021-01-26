@@ -9,7 +9,12 @@
 </p>
 <br>
 <p> Status: 
-  <%= @listing.status %>
+  <% if @listing.claimed %>
+    <%= "Item has been claimed" %>
+    <% else %>
+        <%= "Item is available" %>
+        <% end %>
+
   <br>
 </p>
 <br>
