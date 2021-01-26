@@ -1,0 +1,35 @@
+<% if @listing.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@listing.errors.count, "error") %>
+      prohibited this listing from being saved:
+    </h2>
+
+    <ul>
+    <% @listing.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %> 
+
+
+
+<%= form_for @listing do |f| %> 
+    <%= f.label "Title" %> 
+    <%= f.text_field :title %>
+    <br>
+    <br>
+    <%= f.label "Category" %> 
+    <%= f.text_field :category %>
+    <br>
+    <br>
+    <%= f.label "Description" %> 
+    <%= f.text_area :description %>
+    <br>
+    <br>
+    <%= f.label "Status" %> 
+    <%= f.text_field :status %>
+
+<%= f.submit %>
+<% end %>
