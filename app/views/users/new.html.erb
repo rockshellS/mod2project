@@ -1,3 +1,44 @@
 <h1>Create a User</h1>
 
-<%= render 'form' %>
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@user.errors.count, "error") %>
+      prohibited this user from being saved:
+    </h2>
+
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %> 
+
+
+
+<%= form_for @user do |f| %> 
+    <%= f.label "Name" %> 
+    <%= f.text_field :name %>
+    <br>
+    <br>
+    <%= f.label "Username" %> 
+    <%= f.text_field :username %>
+    <br>
+    <br>
+    <%= f.label "Password" %> 
+    <%= f.text_field :password %>
+    <br>
+    <br>
+    <%= f.label "Password Confirmation" %> 
+    <%= f.text_field :password_confirmation %>
+    <br>
+    <br>
+    <%= f.label "Bio" %> 
+    <%= f.text_area :bio %>
+    <br>
+    <br>
+
+
+<%= f.submit %>
+<% end %>
