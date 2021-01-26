@@ -14,7 +14,8 @@ class LikesController < ApplicationController
     def create
         @like = Like.new(like_params)
         if @like.save
-            redirect_to like_path(@like)
+            @listing = @like.listing
+            redirect_to listing_path(@listing)
         else 
             render :new
         end 

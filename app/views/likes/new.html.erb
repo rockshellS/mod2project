@@ -1,0 +1,15 @@
+
+
+
+<%= form_for @like do |f| %> 
+<%= f.label "User" %> 
+    <%= f.collection_select :liker_id, User.all, :id, :username, {:prompt => "Select Username"} %>
+
+
+
+
+    <%= f.label "Listing" %> 
+    <%= f.collection_select :listing_id, Listing.all.select {|l| l.claimed == false }, :id, :title, {:prompt => "Select Listing"} %>
+
+    <%= f.submit %>
+<% end %>
