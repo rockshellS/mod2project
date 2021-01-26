@@ -1,6 +1,6 @@
 <h2><%= @user.name %></h2>
 <p>
-  <%= @user.user_name %>
+  <%= @user.username %>
   <br>
 </p>
 <p> Bio: 
@@ -8,8 +8,9 @@
   <br>
 </p>
 <br>
-<p> Listing: 
-  <%= @user.listed_items.each do |l| %>
+<p> Listings: 
+
+  <% @user.listed_items.each do |l| %>
      <%= link_to l.title, listing_path(l) %>
      <% end %>
  </p>

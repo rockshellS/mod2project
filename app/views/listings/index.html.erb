@@ -4,7 +4,12 @@
   <li>Title: <%= link_to l.title, listing_path(l)  %></li>
   <li>Category: <%= l.category %></li>
   <li>Description: <%= l.description %></li>
-  <li>Status: <%= l.status %></li>
-  <li>Owner: <%= l.owner %></li>
+  <li>Status: <% if l.claimed %>
+    <%= "Item has been claimed" %>
+    <% else %>
+    <%= "Item is available" %>
+    <% end %>
+ </li>
+  <li>Owner: <%= l.owner.name %></li>
 <% end %>
 </ul>
