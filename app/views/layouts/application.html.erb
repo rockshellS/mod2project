@@ -11,6 +11,12 @@
   </head>
 
   <body>
+    <% if flash.alert  %>
+    <% flash.alert.each do |message| %>
+    <li> <%= message %></li>
+      <% end %>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

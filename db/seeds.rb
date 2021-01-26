@@ -7,11 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-User.create(name: "Abbie", username: "thatsabbie", bio: "This is Abbie's bio!")
-User.create(name: "Rachelle", username: "hirachelle", bio: "This is Rachelle's bio!")
-User.create(name: "Aaron", username: "heyaaron", bio: "This is Aaron's bio!")
-User.create(name: "Marc", username: "whatsupmarc", bio: "This is Marc's bio!")
-User.create(name: "James", username: "hellojames", bio: "This is James bio!")
+User.create(name: "Abbie", username: "thatsabbie", password: "123", password_confirmation: "123", bio: "This is Abbie's bio!")
+User.create(name: "Rachelle", username: "hirachelle", password: "123", password_confirmation: "123", bio: "This is Rachelle's bio!")
+User.create(name: "Aaron", username: "heyaaron", password: "123", password_confirmation: "123", bio: "This is Aaron's bio!")
+User.create(name: "Marc", username: "whatsupmarc", password: "123", password_confirmation: "123", bio: "This is Marc's bio!")
+User.create(name: "James", username: "hellojames", password: "123", password_confirmation: "123", bio: "This is James bio!")
 
 Category.create(name: "Kitchen")
 Category.create(name: "Exercise equipment")
