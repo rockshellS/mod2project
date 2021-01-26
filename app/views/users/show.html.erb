@@ -1,0 +1,17 @@
+<h2><%= @user.name %></h2>
+<p>
+  <%= @user.username %>
+  <br>
+</p>
+<p> Bio: 
+  <%= @user.bio %>
+  <br>
+</p>
+<br>
+<p> Listings: 
+
+  <% @user.listed_items.each do |l| %>
+     <%= link_to l.title, listing_path(l) %>
+     <% end %>
+ </p>
+
