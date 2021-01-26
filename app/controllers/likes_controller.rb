@@ -17,7 +17,8 @@ class LikesController < ApplicationController
             # @listing = @like.listing
             redirect_to listing_path(@like.listing)
         else 
-            render :new
+            redirect_to listing_path(@like.listing)
+            #we need to add in an error message
         end 
     end 
 
