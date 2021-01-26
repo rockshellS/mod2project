@@ -32,5 +32,7 @@
 <% end %>
 <br>
 <h4>Likes: <%= @listing.likes.count %></h4>
-<%= button_to “Like”, new_like_path, method: :get %>
+<form method="get" action="/likes/new" class="button_to">
+  <input value="Like" style="background-color: #5AB4E1; border-radius: 4px; font-size: 20px;" type="submit" />
+  </form>
 

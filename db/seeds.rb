@@ -5,9 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.destroy_all
-Listing.destroy_all
-Like.destroy_all
+
 
 User.create(name: "Abbie", username: "thatsabbie", bio: "This is Abbie's bio!")
 User.create(name: "Rachelle", username: "hirachelle", bio: "This is Rachelle's bio!")
