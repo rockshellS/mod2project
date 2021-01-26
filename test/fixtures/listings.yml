@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  category: MyString
+  owner_id: 1
+  recipient_id: 1
+  status: MyString
+
+two:
+  title: MyString
+  description: MyText
+  category: MyString
+  owner_id: 1
+  recipient_id: 1
+  status: MyString
