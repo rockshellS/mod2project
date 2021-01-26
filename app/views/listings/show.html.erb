@@ -32,3 +32,5 @@
 <% end %>
 <br>
 <h4>Likes: <%= @listing.likes.count %></h4>
+<%= button_to “Like”, new_like_path, method: :get %>
+
