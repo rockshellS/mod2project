@@ -5,6 +5,10 @@ class User < ApplicationRecord
 
     has_many :likes, :foreign_key => 'liker_id'
 
+    validates :username, uniqueness: true
+    validates :username, presence: true
+    validates :name, presence: true
+
     has_secure_password
    
 end
