@@ -15,6 +15,11 @@ class SessionsController < ApplicationController
 
     end 
 
+    def destroy
+        session.delete :username
+        redirect_to '/'
+    end 
+
     # def create 
     #     user = User.find_by(username: params[:username])
 
