@@ -1,0 +1,29 @@
+<h2><%= @listing.title %></h2>
+<p>
+  <%= @listing.description %>
+  <br>
+</p>
+<p> Category: 
+  <%= @listing.category %>
+  <br>
+</p>
+<br>
+<p> Status: 
+  <%= @listing.status %>
+  <br>
+</p>
+<br>
+<p> Owner: 
+  <%= link_to @listing.owner.name, user_path(@listing.owner) %>
+  <br>
+</p>
+
+<br>
+<% if @listing.recipient %>
+<p> Recipient: 
+  <%= link_to @listing.owner.name, user_path(@listing.owner) %>
+  <br>
+</p>
+<% end %>
+<br>
+<h4>Likes: <%= @listing.likes.count %></h4>

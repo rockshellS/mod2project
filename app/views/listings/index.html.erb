@@ -1,0 +1,10 @@
+<h1>Listings</h1>
+<ul>
+<% @listings.each do |l| %>
+  <li>Title: <%= link_to l.title, listing_path(l)  %></li>
+  <li>Category: <%= l.category %></li>
+  <li>Description: <%= l.description %></li>
+  <li>Status: <%= l.status %></li>
+  <li>Owner: <%= l.owner %></li>
+<% end %>
+</ul>
