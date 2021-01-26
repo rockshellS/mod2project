@@ -5,5 +5,6 @@ class User < ApplicationRecord
 
     has_many :likes, :foreign_key => 'liker_id'
 
+    has_secure_password
    
 end
