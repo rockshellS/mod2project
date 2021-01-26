@@ -1,0 +1,38 @@
+<h2><%= @listing.title %></h2>
+<p>
+  <%= @listing.description %>
+  <br>
+</p>
+<p> Category: 
+  <%= @listing.category.name %>
+  <br>
+</p>
+<br>
+<p> Status: 
+  <% if @listing.claimed %>
+    <%= "Item has been claimed" %>
+    <% else %>
+        <%= "Item is available" %>
+        <% end %>
+
+  <br>
+</p>
+<br>
+<p> Owner: 
+  <%= link_to @listing.owner.name, user_path(@listing.owner) %>
+  <br>
+</p>
+
+<br>
+<% if @listing.recipient %>
+<p> Recipient: 
+  <%= link_to @listing.owner.name, user_path(@listing.owner) %>
+  <br>
+</p>
+<% end %>
+<br>
+<h4>Likes: <%= @listing.likes.count %></h4>
+<form method="get" action="/likes/new" class="button_to">
+  <input value="Like" style="background-color: #5AB4E1; border-radius: 4px; font-size: 20px;" type="submit" />
+  </form>
+
