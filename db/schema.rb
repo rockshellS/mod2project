@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_25_213857) do
+ActiveRecord::Schema.define(version: 2021_01_26_171343) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "likes", force: :cascade do |t|
     t.integer "liker_id"
@@ -22,7 +28,7 @@ ActiveRecord::Schema.define(version: 2021_01_25_213857) do
   create_table "listings", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.string "category"
+    t.integer "category_id"
     t.boolean "claimed", default: false
     t.integer "owner_id"
     t.integer "recipient_id"
