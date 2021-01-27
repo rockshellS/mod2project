@@ -36,6 +36,17 @@ class UsersController < ApplicationController
         end 
     end 
 
+    def confirm_delete
+        @user = User.find(params[:id])
+    end 
+
+    def destroy
+        @user = User.find_by(id: session[:user_id])
+        @user.destroy
+        session.delete :user_id
+        redirect_to '/'
+    end
+
     private 
     def user_params
         params.require(:user).permit(:name, :username, :password, :password_confirmation, :bio) 
