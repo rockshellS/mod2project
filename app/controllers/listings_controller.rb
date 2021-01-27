@@ -35,6 +35,16 @@ class ListingsController < ApplicationController
             render :edit
         end 
     end 
+# NEW A & R
+    def confirm_delete
+        @listing = Listing.find(params[:id])
+    end 
+# NEW A & R
+    def destroy
+        @listing = Listing.find_by(params[:id])
+        @listing.destroy
+        redirect_to user_path(session[:user_id])
+    end
 
     private 
     def listing_params
