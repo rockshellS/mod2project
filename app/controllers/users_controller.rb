@@ -9,6 +9,10 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
     end 
 
+    def listings
+        @user = User.find_by(id: session[:user_id])
+    end
+
     def new 
         @user = User.new
     end 
