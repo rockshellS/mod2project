@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
         session[:username]
     end 
 
+
     # def require_login
     #     redirect_to controller: 'sessions', action: 'new' unless current_user
     # end 

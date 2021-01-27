@@ -1,15 +1,38 @@
 <h1>Listings</h1>
-<ul>
-<% @listings.each do |l| %>
-  <li>Title: <%= link_to l.title, listing_path(l)  %></li>
-  <li>Category: <%= l.category.name %></li>
-  <li>Description: <%= l.description %></li>
-  <li>Status: <% if l.claimed %>
-    <%= "Item has been claimed" %>
-    <% else %>
-    <%= "Item is available" %>
+<div><%= link_to 'Create New Listing', new_listing_path %></div>
+<br />
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Category</th>
+      <th>Description</th>      
+      <th>Status</th>
+      <th>Owner</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @listings.each do |l| %>
+      <tr>
+        <td><%= l.title %></td>
+        <td><%= l.category.name %></td>
+        <td><%= l.description %></td>
+        <td> 
+             <% if l.claimed %>
+         <%= "Item has been claimed" %>
+          <% else %>
+          <%= "Item is available" %>
+          <% end %> </td>
+
+        <td>
+          <%= link_to 'View Listing', l %> 
+        </td>
+      </tr>
     <% end %>
- </li>
-  <li>Owner: <%= l.owner.name %></li>
-<% end %>
-</ul>
+  </tbody>
+</table>
+
+<br>
+

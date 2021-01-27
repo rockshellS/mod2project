@@ -14,4 +14,9 @@
  *= require_self
  */
  
+ .nav-bar {
+
+    display: flex;
+    flex-direction: row;
+}
 

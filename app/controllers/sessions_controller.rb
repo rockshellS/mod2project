@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 
         if user.try(:authenticate, params[:password])
             session[:user_id] = user.id
-            redirect_to user_path(user)
+            redirect_to '/home'
         else 
             flash.alert = ["Incorrect username or password."]
             redirect_to new_session_path
@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
 
     def destroy
         session.delete :user_id
-        render :new
+        redirect_to new_session_path
     end
 
     # def create 
