@@ -6,12 +6,10 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   delete '/sessions/destroy', to: 'sessions#destroy'
 
-  root 'sessions#new'
+  get "/users/:id/confirm_delete", to: "users#confirm_delete", as: "confirm_delete"
 
-  resources :categories, only: [:index, :show]
-  resources :likes, only: [:index, :show, :new, :create, :destroy]
-  resources :listings, only: [:index, :show, :new, :create, :edit, :update, :destroy]
-  resources :users, only: [:show, :new, :create, :edit, :update, :destroy]
-  resources :sessions, only: [:new, :create, :destroy]
+  root 'users#new'
+
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

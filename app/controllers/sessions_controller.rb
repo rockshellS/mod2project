@@ -12,8 +12,7 @@ class SessionsController < ApplicationController
             flash.alert = ["Incorrect username or password."]
             redirect_to new_session_path
         end 
-
-    end 
+    end
 
     def destroy
         session.delete :user_id
@@ -31,4 +30,4 @@ class SessionsController < ApplicationController
 
     # end 
 
-end 
+end
