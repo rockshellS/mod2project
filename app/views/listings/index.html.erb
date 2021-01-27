@@ -1,5 +1,5 @@
 <h1>Listings</h1>
-<div><%= link_to 'Create New Listing', new_listing_path %></div>
+<div><%= button_to 'Create New Listing', new_listing_path, method: :get%></div>
 <br />
 
 <table>
@@ -16,7 +16,7 @@
   <tbody>
     <% @listings.each do |l| %>
       <tr>
-        <td><%= l.title %></td>
+        <td><%= link_to "#{l.title}", l  %></td>
         <td><%= l.category.name %></td>
         <td><%= l.description %></td>
         <td> 
@@ -27,7 +27,7 @@
           <% end %> </td>
 
         <td>
-          <%= link_to 'View Listing', l %> 
+          <%= link_to "#{l.owner.name}", l.owner %> 
         </td>
       </tr>
     <% end %>
