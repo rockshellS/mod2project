@@ -12,11 +12,11 @@ Rails.application.routes.draw do
 
   get "/users/:id/confirm_delete", to: "users#confirm_delete", as: "confirm_delete"
 
-  # NEW A & R
+
   get "/listings/:id/confirm_delete", to: "listings#confirm_delete", as: "confirm_delete_listing"
 
   
-  root 'users#new'
+  root 'application#home'
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

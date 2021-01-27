@@ -26,12 +26,14 @@
 <br>
 <% if @listing.recipient %>
 <p> Recipient: 
-  <%= link_to @listing.owner.name, user_path(@listing.owner) %>
+  <%= link_to @listing.recipient.name, user_path(@listing.recipient) %>
   <br>
 </p>
 <% end %>
 <br>
 <h4>Likes: <%= @listing.likes.count %></h4>
+
+
 
 <% if @listing.owner.id != session[:user_id]%>
 <%= form_tag likes_path do %> 
@@ -40,12 +42,26 @@
 <%= submit_tag "LIKE THIS ITEM" %>
     <% end %>
 <% else %>
-<h6> <%= "The following users are interested in your item: "%></h6> 
+<h4> <%= "The following users are interested in your item: "%></h4> 
     <ul><% @listing.likes.each do |l| %>
     <li><%= link_to "#{l.liker.name}, @#{l.liker.username}", user_path(l.liker) %> </li>
         <% end %>
         </ul>      
  <% end %>
+
+<% if @listing.owner.id == session[:user_id] && @listing.claimed == false %>
+<h4>Choose a user to give your item to!</h4>
+  <%= form_for @listing, method: :patch do |f| %> 
+        <%= f.collection_select :recipient_id, @listing.likers, :id, :name %>  
+          <%= f.hidden_field :claimed, {:value => true} %>  
+          <br>         
+      <%= f.submit  "Click to give this user your item." %>
+                <% end %>
+              <% end %>
+
+
+
+
 
 
 <%= button_to "Edit Listing", edit_listing_path(@listing), method: :get%>

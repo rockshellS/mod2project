@@ -5,6 +5,11 @@ class Listing < ApplicationRecord
 
     has_many :likes
 
+    has_many :likers, :class_name => :User, through: :likes
+
     belongs_to :category
+
+
+
 
 end

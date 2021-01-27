@@ -41,7 +41,7 @@ class ListingsController < ApplicationController
     end 
 
     def destroy
-        @listing = Listing.find_by(params[:id])
+        @listing = Listing.find(params[:id])
         @listing.destroy
         redirect_to user_path(session[:user_id])
     end
