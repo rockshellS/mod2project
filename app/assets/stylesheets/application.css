@@ -15,8 +15,10 @@
  */
  
  .nav-bar {
-
+    float: right;
     display: flex;
-    flex-direction: row;
+    padding: 10px 10px;
+
+    background-color: #333;  
 }
 
