@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
 
-  get "/users/:id/listings", to: 'users#listings' , as: ""
+  get "/users/:id/listings", to: 'users#listings' , as: "user_listings"
 
   get "/home", to: 'application#home'
 
