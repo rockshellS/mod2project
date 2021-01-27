@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   resources :listings
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+
+
+  get "/home", to: 'application#home'
+
   delete '/sessions/destroy', to: 'sessions#destroy'
 
   get "/users/:id/confirm_delete", to: "users#confirm_delete", as: "confirm_delete"

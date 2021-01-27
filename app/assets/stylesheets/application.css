@@ -14,4 +14,11 @@
  *= require_self
  */
  
+ .nav-bar {
+    float: right;
+    display: flex;
+    padding: 10px 10px;
+
+    background-color: #333;  
+}
 
