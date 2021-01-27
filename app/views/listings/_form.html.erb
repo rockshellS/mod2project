@@ -26,11 +26,8 @@
     <br>
     <%= f.label "Category" %> 
     <%= f.collection_select :category_id, Category.all, :id, :name, {:prompt => "Select Category"} %>
-    <br>
-    <br>    
-    <%= f.label "Owner" %> 
-    <%= f.collection_select :owner_id, User.all, :id, :username, {:prompt => "Select Owner"} %>
+    
     <br>
 
-<%= f.submit %>
+<%= f.button  :submit , name: :owner_id, value: session[:user_id] %>
 <% end %>

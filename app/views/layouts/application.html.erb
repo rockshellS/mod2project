@@ -11,6 +11,13 @@
   </head>
 
   <body>
+   <div style="float:right" >
+   <%= button_to "Listings", listings_path, method: :get %>
+   <%= button_to "Create New Listing", new_listing_path, method: :get%>
+   <%= button_to "Logout", {:controller=> "sessions", :action=> "destroy"}, :method => :delete %>
+  </div>
+  
+  
     <% if flash.alert  %>
     <% flash.alert.each do |message| %>
     <li> <%= message %></li>
