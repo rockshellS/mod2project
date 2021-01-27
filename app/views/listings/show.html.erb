@@ -33,13 +33,19 @@
 <br>
 <h4>Likes: <%= @listing.likes.count %></h4>
 
-
+<% if @listing.owner.id != session[:user_id]%>
 <%= form_tag likes_path do %> 
     <%= hidden_field_tag "like[liker_id]", session[:user_id] %>   
     <%= hidden_field_tag "like[listing_id]", @listing.id %>           
 <%= submit_tag "LIKE THIS ITEM" %>
-<% end %>
-
+    <% end %>
+<% else %>
+<h6> <%= "The following users are interested in your item: "%></h6> 
+    <ul><% @listing.likes.each do |l| %>
+    <li><%= link_to "#{l.liker.name}, @#{l.liker.username}", user_path(l.liker) %> </li>
+        <% end %>
+        </ul>      
+ <% end %>
 
 
 
