@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2021_01_28_042058) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
+    t.string "emoji"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
