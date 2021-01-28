@@ -7,6 +7,7 @@ class ListingsController < ApplicationController
 
     def show
         @listing = Listing.find(params[:id])
+       
     end 
 
     def new 
@@ -40,7 +41,8 @@ class ListingsController < ApplicationController
         else 
             render :edit
         end 
-    end 
+    end
+    
 
     def confirm_delete
         @listing = Listing.find(params[:id])
@@ -52,6 +54,7 @@ class ListingsController < ApplicationController
         redirect_to user_path(session[:user_id])
     end
 
+    # two strong params declarations?
     private 
     def listing_params
         params.require(:listing).permit(:title, :description, :category_id, :claimed, :owner_id, :recipient_id, :image) 

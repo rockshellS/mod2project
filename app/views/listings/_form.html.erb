@@ -30,7 +30,7 @@
     </div><br>
     <div>
     <%= f.label "Upload Image" %>
-    <%= f.file_field :image %>
+    <%= f.file_field :image,  multiple: true %>
     </div><br>
     
     <%= f.button  :submit , name: :owner_id, value: session[:user_id] %>
