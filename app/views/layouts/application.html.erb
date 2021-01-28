@@ -23,7 +23,8 @@
             <% end %><br>
    </nav>
  <% if session[:user_id] %>
-      <h4>Welcome to Buy Nothing Chicago,   <%= User.find_by(id: session[:user_id]).name %></h4>
+      <h2>Welcome to Buy Nothing Chicago,   <%= User.find_by(id: session[:user_id]).name %></h2>
+      <h4>Your neighborhood is:  <%= User.find_by(id: session[:user_id]).location.neighborhood %></h4>
     <% end %>
 
 
