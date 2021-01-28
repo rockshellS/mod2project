@@ -19,11 +19,11 @@ Location.create(neighborhood: "Edgewater")
 Location.create(neighborhood: "Pilsen")
 Location.create(neighborhood: "Hyde Park")
 
-User.create(name: "Abbie", username: "thatsabbie", password: "123", password_confirmation: "123", bio: "This is Abbie's bio!", location_id: 3)
-User.create(name: "Rachelle", username: "hirachelle", password: "123", password_confirmation: "123", bio: "This is Rachelle's bio!", location_id: 9)
-User.create(name: "Aaron", username: "heyaaron", password: "123", password_confirmation: "123", bio: "This is Aaron's bio!", location_id: 3)
-User.create(name: "Marc", username: "whatsupmarc", password: "123", password_confirmation: "123", bio: "This is Marc's bio!", location_id: 6)
-User.create(name: "James", username: "hellojames", password: "123", password_confirmation: "123", bio: "This is James bio!", location_id: 1)
+User.create(name: "Abbie", username: "thatsabbie", contact_info: "708 334 8411, abbie.coghlan@gmail.com", password: "123", password_confirmation: "123", bio: "This is Abbie's bio!", location_id: 3)
+User.create(name: "Rachelle", username: "hirachelle", password: "123", password_confirmation: "123", contact_info: "708 555 5555, email@gmail.com", bio: "This is Rachelle's bio!", location_id: 9)
+User.create(name: "Aaron", username: "heyaaron", password: "123", password_confirmation: "123", bio: "This is Aaron's bio!", contact_info: "708 555 5555, email@gmail.com", location_id: 3)
+User.create(name: "Marc", username: "whatsupmarc", password: "123", password_confirmation: "123", bio: "This is Marc's bio!", contact_info: "708 555 5555, email@gmail.com", location_id: 6)
+User.create(name: "James", username: "hellojames", password: "123", password_confirmation: "123", bio: "This is James bio!", contact_info: "708 555 5555, email@gmail.com", location_id: 1)
 
 
 Category.create(name: "Kitchen")

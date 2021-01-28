@@ -8,6 +8,12 @@
   <br>
 </p>
 <br>
+<% if @user.id == session[:user_id]%>
+<p> Contact Information: 
+  <%= @user.contact_info %>
+</p>
+  <% end %>
+<br>
 <p> Listings: 
 
   <% @user.listed_items.each do |l| %>
