@@ -24,6 +24,7 @@
     <img src="<%= (url_for(@listing.image))%>" width="400" height="500" >
 <% end %>
 <% if @listing.recipient %>
+
 <p> Recipient: 
   <%= link_to @listing.recipient.name, user_path(@listing.recipient) %>
   <br>
