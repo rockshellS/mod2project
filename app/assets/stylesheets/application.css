@@ -25,7 +25,7 @@
 header {
     padding: 60px;
     text-align: center;
-    background: #1abc9c;
+    background: #537b9b;
     color: white;
     font-size: 30px;
   }
@@ -33,7 +33,7 @@ header {
 .header-1 {
     padding: 60px;
     text-align: center;
-    background: red;
+    background: rgb(209, 166, 166);
     color:aliceblue;
     font-size: 30px;
   }
@@ -48,4 +48,8 @@ header {
 
 .likes-followers {
     background: blue;
+}
+
+body {
+  background-color: #F9F6F6;
 }

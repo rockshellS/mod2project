@@ -1,7 +1,9 @@
 
 <header class="header-2">
-<h1>Buy Nothing Chicago</h1>
-<h3>One person's trash...</h3>
+<h1>Welcome, <%= User.find_by(id: session[:user_id]).name %></h1>
+
+<h4>Your neighborhood is:  <%= User.find_by(id: session[:user_id]).location.neighborhood %></h4></h3>
+
 </header>
 
 <p> Welcome to Buy Nothing Chicago! Below you will find rules to particpate in our community. We're glad you're here!</p>
