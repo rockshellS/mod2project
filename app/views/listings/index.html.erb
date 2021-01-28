@@ -10,6 +10,7 @@
       <th>Description</th>      
       <th>Status</th>
       <th>Owner</th>
+      <th>Neighborhood</th>
       <th></th>
     </tr>
   </thead>
@@ -29,6 +30,7 @@
         <td>
           <%= link_to "#{l.owner.name}", l.owner %> 
         </td>
+         <td><%= l.owner.location.neighborhood %></td>
       </tr>
     <% end %>
   </tbody>
