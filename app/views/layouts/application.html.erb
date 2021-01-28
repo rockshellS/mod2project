@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title = BuyNothingd></title>
+    <title = BuyNothing></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -15,23 +15,24 @@
   </head>
   <body>
 <nav class = "nav-bar">
-      <%= button_to "Home", home_path, method: :get %>
-      <%= button_to "All Listings", listings_path, method: :get %>
+
+      <%= button_to "Home", home_path, method: :get, class: "nav-button" %> 
+      <%= button_to "All Listings", listings_path, method: :get, class: "nav-button" %>
       <% if !session[:user_id] %>
-                <%= button_to "Create Account", new_user_path, method: :get %>
-                <%= button_to "Login", new_session_path, method: :get %>
+                <%= button_to "Create Account", new_user_path, method: :get, class: "nav-button" %>
+                <%= button_to "Login", new_session_path, method: :get, class: "nav-button" %>
               <% else %>
-                <%= button_to "My Profile", user_path(User.find_by(id: session[:user_id])), method: :get %>
-                <%= button_to "My Listings", user_listings_path(User.find_by(id: session[:user_id])), method: :get %>
-                <%= button_to "Create New Listing", new_listing_path, method: :get %>
-                <%= button_to "Logout", {:controller=> "sessions", :action=> "destroy"}, :method => :delete %>
+                <%= button_to "My Profile", user_path(User.find_by(id: session[:user_id])), method: :get, class: "nav-button" %>
+                <%= button_to "My Listings", user_listings_path(User.find_by(id: session[:user_id])), method: :get, class: "nav-button" %>
+                <%= button_to "Create New Listing", new_listing_path, method: :get, class: "nav-button" %>
+                <%= button_to "Logout", {:controller=> "sessions", :action=> "destroy"}, :method => :delete, class: "nav-button" %>
             <% end %><br>
+
    </nav>
  <div class="header-1">  
- <% if session[:user_id] %>
-      <h2>Welcome to Buy Nothing Chicago,   <%= User.find_by(id: session[:user_id]).name %></h2>
-      <h4>Your neighborhood is:  <%= User.find_by(id: session[:user_id]).location.neighborhood %></h4>
-<% end %>
+ 
+      <h1>Buy Nothing Chicago</h1>
+ 
 </div>
   
   
