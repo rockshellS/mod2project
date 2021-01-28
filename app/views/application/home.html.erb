@@ -1,15 +1,13 @@
 
 <header class="header-2">
-<h1>Buy Nothing Chicago</h1>
-<h3>One person's trash...</h3>
+<h4>Welcome to <%= User.find_by(id: session[:user_id]).location.neighborhood%>'s Buy Nothing Chicago community, <%= User.find_by(id: session[:user_id]).name %>!</h4>
 </header>
 
-<p> Welcome to Buy Nothing Chicago! Below you will find rules to particpate in our community. We're glad you're here!</p>
+<p class="rules"> We're glad you're here! Below you will find rules to particpate in our community. </p>
 <ul class = "ul-1">
-<li>a rule!</li>
-<li>another rule!</li>
-<li>another rule!</li>
-<li>another rule!</li>
-<li>another rule!</li>
-
+<li>Keep it legal</li>
+<li>No discrimination</li>
+<li>No buying, selling, or trading allowed</li>
+<li>Treat your neighbors with kindness and respect</li>
+<li>All members participate at their own risk</li>
 </ul>
