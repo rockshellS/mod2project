@@ -45,6 +45,11 @@
     <br>
     <br>
     <%= f.collection_select :location_id, Location.all, :id, :neighborhood, {prompt: "Select Neighborhood"} %> 
+  <br>
+  <br>
+   <%= f.label "Upload Profile Picture" %>
+    <%= f.file_field :image %>
+<br>
 <br>
 
 <%= f.submit %>
