@@ -3,7 +3,10 @@ class User < ApplicationRecord
     has_many :received_items, :class_name => :Listing, :foreign_key => 'recipient_id'
     has_many :likes, :foreign_key => 'liker_id'
 
+
     belongs_to :location
+
+    has_one_attached :image
 
     validates :username, uniqueness: true
     validates :username, presence: true
