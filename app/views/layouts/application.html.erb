@@ -18,11 +18,13 @@
               <% else %>
                 <%= button_to "My Profile", user_path(User.find_by(id: session[:user_id])), method: :get %>
                 <%= button_to "My Listings", user_listings_path(User.find_by(id: session[:user_id])), method: :get %>
+                <%= button_to "Create New Listing", new_listing_path, method: :get %>
                 <%= button_to "Logout", {:controller=> "sessions", :action=> "destroy"}, :method => :delete %>
             <% end %><br>
    </nav>
  <% if session[:user_id] %>
-      <h4>Welcome to Buy Nothing Chicago,   <%= User.find_by(id: session[:user_id]).name %></h4>
+      <h2>Welcome to Buy Nothing Chicago,   <%= User.find_by(id: session[:user_id]).name %></h2>
+      <h4>Your neighborhood is:  <%= User.find_by(id: session[:user_id]).location.neighborhood %></h4>
     <% end %>
 
 

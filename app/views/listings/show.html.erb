@@ -22,6 +22,7 @@
 
 <% if @listing.image.attached? %>
     <img src="<%= (url_for(@listing.image))%>" width="400" height="500" >
+
 <% end %>
 <% if @listing.recipient %>
 
@@ -71,8 +72,12 @@
       <%= f.submit  "Click to give this user your item." %>
                 <% end %>
               <% end %>
-
-
+<br>
+<% if @listing.owner.id == session[:user_id] && @listing.recipient %>
+  <h4>You have chosen to give your item to <%= @listing.recipient.name %>. You can contact them at: </h4>
+  <%= @listing.recipient.contact_info %>
+  <br>
+  <% end %>
 
 
 

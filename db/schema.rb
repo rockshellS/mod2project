@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2021_01_28_042058) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
+    t.string "emoji"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -74,6 +75,7 @@ ActiveRecord::Schema.define(version: 2021_01_28_042058) do
     t.string "name"
     t.string "username"
     t.string "password_digest"
+    t.text "contact_info"
     t.text "bio"
     t.string "location_id"
     t.datetime "created_at", precision: 6, null: false
