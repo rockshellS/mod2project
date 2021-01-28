@@ -15,19 +15,26 @@
 
 
 
-<%= form_for @listing do |f| %> 
-    <%= f.label "Title" %> 
-    <%= f.text_field :title %>
-    <br>
-    <br>
-    <%= f.label "Description" %> 
-    <%= f.text_area :description %>
-    <br>
-    <br>
-    <%= f.label "Category" %> 
-    <%= f.collection_select :category_id, Category.all, :id, :name, {:prompt => "Select Category"} %>
+<%= form_for @listing do |f| %>
+    <div>
+      <%= f.label "Title" %> 
+      <%= f.text_field :title %>
+    </div><br>
+    <div>
+      <%= f.label "Description" %> 
+      <%= f.text_area :description %>
+    </div><br>
+    <div>
+      <%= f.label "Category" %> 
+      <%= f.collection_select :category_id, Category.all, :id, :name, {:prompt => "Select Category"} %>
+    </div><br>
+    <div>
+    <%= f.label "Upload Image" %>
+    <%= f.file_field :image %>
+    </div><br>
     
-    <br>
-
-<%= f.button  :submit , name: :owner_id, value: session[:user_id] %>
+    <%= f.button  :submit , name: :owner_id, value: session[:user_id] %>
+    
 <% end %>
+
+

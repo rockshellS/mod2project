@@ -29,7 +29,13 @@ class ListingsController < ApplicationController
 
     def update 
         @listing = Listing.find(params[:id])
+        ##TODO AARON DONT TOUCH
+        #because listing only has one image(via Model macro) in order to update the original, or first, image
+        #needs to be deleted(for now) via .purge 
+        #@listing.image.purge 
+        #@listing.attach(listing_params[:image])
         if @listing.update(listing_params)
+            
             redirect_to listing_path(@listing)
         else 
             render :edit
@@ -48,7 +54,7 @@ class ListingsController < ApplicationController
 
     private 
     def listing_params
-        params.require(:listing).permit(:title, :description, :category_id, :claimed, :owner_id, :recipient_id) 
+        params.require(:listing).permit(:title, :description, :category_id, :claimed, :owner_id, :recipient_id, :image) 
     end 
 
 end

@@ -1,29 +1,28 @@
 <h2><%= @listing.title %></h2>
 <p>
   <%= @listing.description %>
-  <br>
 </p>
 <p> Category: 
   <%= @listing.category.name %>
-  <br>
 </p>
-<br>
+
 <p> Status: 
   <% if @listing.claimed %>
     <%= "Item has been claimed" %>
     <% else %>
         <%= "Item is available" %>
-        <% end %>
-
+  <% end %>
   <br>
 </p>
-<br>
 <p> Owner: 
   <%= link_to @listing.owner.name, user_path(@listing.owner) %>
   <br>
 </p>
-
 <br>
+
+<% if @listing.image.attached? %>
+    <img src="<%= (url_for(@listing.image))%>" width="400" height="500" >
+<% end %>
 <% if @listing.recipient %>
 <p> Recipient: 
   <%= link_to @listing.recipient.name, user_path(@listing.recipient) %>
@@ -58,7 +57,7 @@
     <ul><% @listing.likes.each do |l| %>
     <li><%= link_to "#{l.liker.name}, @#{l.liker.username}", user_path(l.liker) %> </li>
         <% end %>
-        </ul>      
+    </ul>      
 
  <% end %>
 
