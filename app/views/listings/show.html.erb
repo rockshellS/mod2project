@@ -35,7 +35,7 @@
 <h4>Likes: <%= @listing.likes.count %></h4>
 
 
-
+<div class = "likes-followers">
 <% if @listing.owner.id != session[:user_id]%>
 
 
@@ -70,16 +70,16 @@
           <%= f.hidden_field :claimed, {:value => true} %>  
           <br>         
       <%= f.submit  "Click to give this user your item." %>
-                <% end %>
+    <% end %>
               <% end %>
 <br>
 <% if @listing.owner.id == session[:user_id] && @listing.recipient %>
   <h4>You have chosen to give your item to <%= @listing.recipient.name %>. You can contact them at: </h4>
   <%= @listing.recipient.contact_info %>
   <br>
-  <% end %>
+<% end %>
 
-
+</div>
 
 <% if @listing.owner.id == session[:user_id]%>
 <%= button_to "Edit Listing", edit_listing_path(@listing), method: :get%>
