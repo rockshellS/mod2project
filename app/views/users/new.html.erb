@@ -27,18 +27,19 @@
     <br>
     <br>
     <%= f.label "Password" %> 
-    <%= f.text_field :password %>
+    <%= f.password_field :password %>
     <br>
     <br>
     <%= f.label "Password Confirmation" %> 
-    <%= f.text_field :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
     <br>
     <br>
     <%= f.label "Bio" %> 
     <%= f.text_area :bio %>
     <br>
     <br>
-
+    <%= f.collection_select :location_id, Location.all, :id, :neighborhood, {prompt: "Select Neighborhood"} %> 
+<br>
 
 <%= f.submit %>
 <% end %>
