@@ -22,3 +22,30 @@
     background-color: #333;  
 }
 
+header {
+    padding: 60px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    font-size: 30px;
+  }
+
+.header-1 {
+    padding: 60px;
+    text-align: center;
+    background: red;
+    color:aliceblue;
+    font-size: 30px;
+  }
+
+  .ul-1 {
+
+  }
+
+.header-2{
+
+}
+
+.likes-followers {
+    background: blue;
+}
