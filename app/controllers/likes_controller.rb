@@ -37,6 +37,14 @@ class LikesController < ApplicationController
         end 
     end 
 
+    def destroy
+
+        @like = Like.find_by(like_params)
+        @listing = Listing.find_by(id: @like.listing_id)
+        @like.destroy
+        redirect_to listing_path(@listing)
+    end 
+
     private 
     def like_params
         params.require(:like).permit(:listing_id, :liker_id) 

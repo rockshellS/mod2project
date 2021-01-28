@@ -36,17 +36,30 @@
 
 
 <% if @listing.owner.id != session[:user_id]%>
+
+
+  <% if @listing.likers.any? {|l| l.id == session[:user_id]} %>
+
+<%= form_tag like_path(Like.find_by(listing_id: @listing.id, liker_id: session[:user_id])), method: :delete do %> 
+    <%= hidden_field_tag "like[liker_id]", session[:user_id] %>   
+    <%= hidden_field_tag "like[listing_id]", @listing.id %>           
+<%= submit_tag "UNLIKE THIS ITEM" %>
+    <% end %>
+    <% else %>
 <%= form_tag likes_path do %> 
     <%= hidden_field_tag "like[liker_id]", session[:user_id] %>   
     <%= hidden_field_tag "like[listing_id]", @listing.id %>           
 <%= submit_tag "LIKE THIS ITEM" %>
     <% end %>
+  <% end %>    
+
 <% else %>
 <h4> <%= "The following users are interested in your item: "%></h4> 
     <ul><% @listing.likes.each do |l| %>
     <li><%= link_to "#{l.liker.name}, @#{l.liker.username}", user_path(l.liker) %> </li>
         <% end %>
         </ul>      
+
  <% end %>
 
 <% if @listing.owner.id == session[:user_id] && @listing.claimed == false %>
@@ -63,9 +76,10 @@
 
 
 
-
+<% if @listing.owner.id == session[:user_id]%>
 <%= button_to "Edit Listing", edit_listing_path(@listing), method: :get%>
 <%= button_to "Delete Listing", confirm_delete_listing_path(@listing), method: :get%>
+  <% end %>
 
 
 
