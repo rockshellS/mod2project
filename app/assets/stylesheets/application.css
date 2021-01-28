@@ -13,36 +13,126 @@
  *= require_tree .
  *= require_self
  */
- 
- .nav-bar {
-    float: right;
-    display: flex;
-    padding: 10px 10px;
 
-    background-color: #333;  
+ @font-face {
+    font-family: 'Roboto';
+    src: url('RobotoCondensed-Regular.ttf');
+ }
+
+ @font-face {
+    font-family: 'DMSerif';
+    src: url('DMSerifDisplay-Regular.ttf');
+ }
+
+ @font-face {
+    font-family: 'hindr';
+    src: url('HindSiliguri-Regular.ttf');
+ }
+ 
+ @font-face {
+    font-family: 'hindb';
+    src: url('HindSiliguri-Bold.ttf');
+ }
+
+h1 h2 h3 h4 h5 h6 {
+    font-family: 'hindb';
+    color:   #6D7AD2;
 }
 
-header {
-    padding: 60px;
+
+body {
+    font-family: 'DMserif';
+}
+
+ .nav-bar {
+    float: right;
+    display: flex;  
+list-style: none;
+   margin: 0 2px;
+   padding: 0;
+   display: flex;
+   justify-content: space-around;
+   color: ivory;
+
+}
+
+.nav-button {
+    color: #F9F6F6 ;
+    background-color: #043D30;
+    border: none;
+    font-family: 'Roboto';
+    
+}
+
+
+.button {
+    border: none;
+    padding: 15px 32px;
     text-align: center;
-    background: #537b9b;
-    color: white;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    color: red;
+    background-color: plum;
+    font-size: xx-large;
+    }
+
+header {
+
+    text-align: center;
+    color: 043D30;
     font-size: 30px;
   }
 
 .header-1 {
-    padding: 60px;
+    padding: 30px;
     text-align: center;
-    background: rgb(209, 166, 166);
-    color:aliceblue;
+    background: #043D30;
+    color: #F9F6F6;
     font-size: 30px;
   }
 
-  .ul-1 {
+  a:link {
+color: #FA733E;
 
   }
 
-.header-2{
+  a:visited {      
+      color: #6D7AD2
+
+}
+
+a:hover
+{
+    color: #FBD431;
+
+}
+a:active
+{
+
+}
+
+
+/* .ul-1 {
+    text-align: center;
+      }
+
+
+.ul-1 > li {
+    text-align: center;
+
+  } */
+
+
+
+  .rules {
+    text-align: center;
+
+  }
+
+  .header-2{
 
 }
 
@@ -52,4 +142,6 @@ header {
 
 body {
   background-color: #F9F6F6;
+  color: #043D30;
 }
+
