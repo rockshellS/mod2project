@@ -1,7 +1,7 @@
-  <h1><%= @location.neighborhood %></h1>
+  <h1><%= @category.name %></h1>
   
 <br>
-  <h3>LISTINGS</h3>
+  <h3>LISTINGS IN THIS CATEGORY</h3>
 
 
 <table>
@@ -17,10 +17,10 @@
     </tr>
   </thead>
   <tbody>
-    <% @location.listed_items.each do |l| %>
+    <% @category.listings.each do |l| %>
       <tr>
         <td><%= link_to "#{l.title}", l  %></td>
-        <td><%= link_to l.category.name, l.category %></td>
+        <td><%= l.category.name %></td>
         <td><%= l.description %></td>
         <td> 
              <% if l.claimed %>
