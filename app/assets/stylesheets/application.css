@@ -143,15 +143,25 @@ a:active
 
 
 
+.c-show {
+    text-align: center;
 
 
+}
+
+.cat-table
+{
+    margin-left: auto;
+    margin-right: auto;
+} 
 
 
 
 table {
 
-  
-    width: 90%;
+    margin-left: auto;
+  margin-right: auto;
+    width: 100%;
 }
 
 th {

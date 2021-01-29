@@ -18,12 +18,13 @@
   <%= link_to @listing.owner.name, user_path(@listing.owner) %>
   <br>
 </p>
-<br>
+
 
 <% if @listing.image.attached? %>
     <img src="<%= (url_for(@listing.image))%>" width="400" height="500" >
 
 <% end %>
+
 <% if @listing.recipient %>
 
 <p> Recipient: 
@@ -44,13 +45,13 @@
 <%= form_tag like_path(Like.find_by(listing_id: @listing.id, liker_id: session[:user_id])), method: :delete do %> 
     <%= hidden_field_tag "like[liker_id]", session[:user_id] %>   
     <%= hidden_field_tag "like[listing_id]", @listing.id %>           
-<%= submit_tag "UNLIKE THIS ITEM" %>
+<%= submit_tag "UNLIKE THIS ITEM", class: "erb-button" %>
     <% end %>
     <% else %>
 <%= form_tag likes_path do %> 
     <%= hidden_field_tag "like[liker_id]", session[:user_id] %>   
     <%= hidden_field_tag "like[listing_id]", @listing.id %>           
-<%= submit_tag "LIKE THIS ITEM" %>
+<%= submit_tag "LIKE THIS ITEM", class: "erb-button" %>
     <% end %>
   <% end %>    
 
@@ -62,14 +63,14 @@
     </ul>      
 
  <% end %>
-
+<br>
 <% if @listing.owner.id == session[:user_id] && @listing.claimed == false %>
-<h4>Choose a user to give your item to!</h4>
-  <%= form_for @listing, method: :patch do |f| %> 
-        <%= f.collection_select :recipient_id, @listing.likers, :id, :name %>  
+<p>Please choose a user to give your item to:</p>
+  <%= form_for @listing, method: :patch, class: "erb-button" do |f| %> 
+        <%= f.collection_select :recipient_id, @listing.likers, :id, :name, class: "erb-button" %>  
           <%= f.hidden_field :claimed, {:value => true} %>  
           <br>         
-      <%= f.submit  "Click to give this user your item." %>
+      <%= f.submit  "Click to give this user your item.", class: "erb-button" %>
     <% end %>
               <% end %>
 <br>
@@ -80,10 +81,10 @@
 <% end %>
 
 </div>
-
+<br>
 <% if @listing.owner.id == session[:user_id]%>
-<%= button_to "Edit Listing", edit_listing_path(@listing), method: :get%>
-<%= button_to "Delete Listing", confirm_delete_listing_path(@listing), method: :get%>
+<%= button_to "Edit Listing", edit_listing_path(@listing), method: :get, class: "erb-button"%>
+<%= button_to "Delete Listing", confirm_delete_listing_path(@listing), method: :get, class: "erb-button"%>
   <% end %>
 
 
