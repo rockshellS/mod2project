@@ -21,8 +21,7 @@
 <br>
 
 <% if @listing.image.attached? %>
-    <img src="<%= (url_for(@listing.image))%>" width="400" height="500" >
-
+    <%= image_tag url_for(@listing.image) %> 
 <% end %>
 
 <% if @listing.recipient %>
