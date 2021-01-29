@@ -1,5 +1,5 @@
 .home-header {
-    padding-top: 15%;
+    padding-top: 5%;
 }
 
 .home-main {
@@ -15,16 +15,16 @@ padding-top: 5%;
     font-family: 'Roboto';
     display: table;
     margin: 0 auto;
-    border: 1px solid black;
 }
 
 div.home-header h4 {
     font-size: 40px;
+    padding-top: 0%;
 }
 
 .rules {
     text-align: center;
     color: #043D30;
     font-family: 'Roboto';
-    font-size: 35px;
+    font-size: 20px;
     }
