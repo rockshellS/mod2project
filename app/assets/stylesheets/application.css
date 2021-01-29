@@ -34,11 +34,6 @@
     src: url('HindSiliguri-Bold.ttf');
  }
 
-h1 h2 h3 h4 h5 h6 {
-    font-family: 'hindb';
-    color:   #6D7AD2;
-}
-
 
 body {
     font-family: 'DMserif';
@@ -61,23 +56,41 @@ list-style: none;
     background-color: #043D30;
     border: none;
     font-family: 'Roboto';
+    font-size: 14px;
     
 }
 
 
-.button {
+button {
+    color: #F9F6F6 ;
+    background-color: #043D30;
     border: none;
-    padding: 15px 32px;
+    font-family: 'Roboto';
+    font-size: 14px;
+    padding: 10px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-    color: red;
-    background-color: plum;
-    font-size: xx-large;
     }
+.center
+{
+    text-align: center;
+}
+.erb-button {
+        color: #F9F6F6 ;
+        background-color: #043D30;
+        border: none;
+        font-family: 'Roboto';
+        font-size: 14px;
+        padding: 5px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 4px 2px;
+        cursor: pointer;
+        }
 
 header {
 
@@ -95,49 +108,72 @@ header {
   }
 
   a:link {
-color: #FA733E;
+color: #23C797;
 
   }
 
   a:visited {      
-      color: #6D7AD2
+      color: #7C8B95
 
 }
 
 a:hover
 {
-    color: #FBD431;
+    color: #99F2C2;
 
 }
 a:active
 {
-
+    color: #7C8B95
+    
 }
 
-
-/* .ul-1 {
+.rules-list {
     text-align: center;
+    font-family: 'Roboto'
+}
+.ul-1 {
+    display: inline-block;
+    text-align: left;
+    color: #23C797;
+    font-size: 18px;
+    font-family: 'Roboto';
       }
 
 
-.ul-1 > li {
-    text-align: center;
 
-  } */
 
+
+
+
+
+
+table {
+
+  
+    width: 90%;
+}
+
+th {
+    text-align: left;
+}
 
 
   .rules {
     text-align: center;
-
+    color: #043D30;
+    font-family: 'Roboto';
+    font-size: 20px;
+    
   }
 
-  .header-2{
+  .header-2 > h4 {
+      color: #043D30;
 
 }
 
 .likes-followers {
-    background: blue;
+
 }
 
 body {

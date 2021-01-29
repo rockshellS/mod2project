@@ -56,7 +56,7 @@
 
 
 <% if @user.id == session[:user_id]%>
- <%= button_to "Edit Profile", edit_user_path(@user), method: :get%>
- <%= button_to "Delete Account", confirm_delete_path(@user), method: :get%>
+ <%= button_to "Edit Profile", edit_user_path(@user), method: :get, class: "erb-button"%>
+ <%= button_to "Delete Account", confirm_delete_path(@user), method: :get, class: "erb-button"%>
   <% end %>
 
