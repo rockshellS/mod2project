@@ -28,19 +28,20 @@ class ListingsController < ApplicationController
     end 
 
     def update 
+        #byebug
         @listing = Listing.find(params[:id])
         ##TODO AARON DONT TOUCH
         #because listing only has one image(via Model macro) in order to update the original, or first, image
         #needs to be deleted(for now) via .purge 
-        #@listing.image.purge 
-        #@listing.attach(listing_params[:image])
+
         if @listing.update(listing_params)
             
             redirect_to listing_path(@listing)
         else 
             render :edit
         end 
-    end 
+    end
+    
 
     def confirm_delete
         @listing = Listing.find(params[:id])

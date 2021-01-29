@@ -2,11 +2,14 @@
 
 
 <div>
-   <% if @listing.image.attached? %> 
-    <%= form_for @listing do |f| %>
-           <img src="<%= (url_for(@listing.image))%>" width="500" height="600>
-    <% end %>
+   <% if @listing.image.attached? %>
+           <%= image_tag url_for(@listing.image) %> 
   <% end %>
+  
 </div>
+
+
+
+
 
 <%= render 'form' %>
