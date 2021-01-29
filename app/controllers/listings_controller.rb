@@ -7,7 +7,6 @@ class ListingsController < ApplicationController
 
     def show
         @listing = Listing.find(params[:id])
-       
     end 
 
     def new 
@@ -29,12 +28,12 @@ class ListingsController < ApplicationController
     end 
 
     def update 
+        #byebug
         @listing = Listing.find(params[:id])
         ##TODO AARON DONT TOUCH
         #because listing only has one image(via Model macro) in order to update the original, or first, image
         #needs to be deleted(for now) via .purge 
-        #@listing.image.purge 
-        #@listing.attach(listing_params[:image])
+
         if @listing.update(listing_params)
             
             redirect_to listing_path(@listing)
@@ -54,7 +53,6 @@ class ListingsController < ApplicationController
         redirect_to user_path(session[:user_id])
     end
 
-    # two strong params declarations?
     private 
     def listing_params
         params.require(:listing).permit(:title, :description, :category_id, :claimed, :owner_id, :recipient_id, :image) 

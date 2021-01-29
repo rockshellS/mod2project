@@ -1,7 +1,7 @@
 <h1><%= @user.name %></h1>
 
 <% if @user.image.attached? %>
-    <img src="<%= (url_for(@user.image))%>" >
+    <%= image_tag url_for(@user.image) %> 
 <% end %>
 
 <h4> Username: <%= @user.username %> </h4>
