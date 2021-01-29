@@ -1,21 +1,26 @@
-  <h1><%= @category.name %></h1>
-  <h3><% 10.times do  %>
+
+  <h1 class= "c-show"><% 10.times do  %>
   <%= @category.emoji %>  
             <% end %>
-        </h3>
+            <%= @category.name.upcase %>
+            <% 10.times do  %>
+  <%= @category.emoji %>  
+            <% end %>
+            
+
+        </h1>
 <br>
-  <h3>LISTINGS IN THIS CATEGORY</h3>
 
 
-<table>
+<table class ="cat-table">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Category</th>
-      <th>Description</th>      
-      <th>Status</th>
-      <th>Owner</th>
-      <th>Neighborhood</th>
+      <th>TITLE</th>
+      <th>CATEGORY</th>
+      <th>DESCRIPTION</th>      
+      <th>STATUS</th>
+      <th>OWNER</th>
+      <th>NEIGHBORHOOD</th>
       <th></th>
     </tr>
   </thead>

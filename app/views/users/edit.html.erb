@@ -31,7 +31,7 @@
     <br>
     <br>
 
-<%= f.submit %>
+<%= f.submit class: "erb-button" %>
 <% end %>
 
- <%= button_to "Delete Account", confirm_delete_path(@user), method: :get%>
+ <%= button_to "Delete Account", confirm_delete_path(@user), method: :get, class: "erb-button"%>
