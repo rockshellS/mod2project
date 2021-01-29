@@ -42,21 +42,21 @@ body {
  .nav-bar {
     float: right;
     display: flex;  
-list-style: none;
-   margin: 0 2px;
-   padding: 0;
-   display: flex;
-   justify-content: space-around;
-   color: ivory;
+    list-style: none;
+    margin: 10px;
+    display: flex;
+    justify-content: space-around;
+    color: ivory;
 
 }
 
 .nav-button {
+    padding-block: 5px;
     color: #F9F6F6 ;
-    background-color: #043D30;
-    border: none;
+    background-color: #0d0e0d;
     font-family: 'Roboto';
     font-size: 14px;
+    border: rgb(236, 227, 227);
     
 }
 
@@ -102,12 +102,14 @@ header {
 .header-1 {
     padding: 30px;
     text-align: center;
-    background: #043D30;
+    background-image: linear-gradient(to right, #043D30 , rgb(211, 211, 41));
+
+    
     color: #F9F6F6;
     font-size: 30px;
   }
 
-  a:link {
+a:link {
 color: #23C797;
 
   }
@@ -127,21 +129,6 @@ a:active
     color: #7C8B95
     
 }
-
-.rules-list {
-    text-align: center;
-    font-family: 'Roboto'
-}
-.ul-1 {
-    display: inline-block;
-    text-align: left;
-    color: #23C797;
-    font-size: 18px;
-    font-family: 'Roboto';
-      }
-
-
-
 
 .c-show {
     text-align: center;
@@ -168,17 +155,13 @@ th {
     text-align: left;
 }
 
-
-  .rules {
-    text-align: center;
-    color: #043D30;
-    font-family: 'Roboto';
-    font-size: 20px;
-    
-  }
-
   .header-2 > h4 {
-      color: #043D30;
+    color: #043D30;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    
+    
 
 }
 
@@ -190,4 +173,6 @@ body {
   background-color: #F9F6F6;
   color: #043D30;
 }
+
+
 

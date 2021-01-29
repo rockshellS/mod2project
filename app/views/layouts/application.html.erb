@@ -1,47 +1,43 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title = BuyNothing></title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+  <title = BuyNothing></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-   
-  </head>
-  <body>
-<nav class = "nav-bar">
-
-      <%= button_to "Home", home_path, method: :get, class: "nav-button" %> 
-      <%= button_to "All Listings", listings_path, method: :get, class: "nav-button" %>
-      <% if !session[:user_id] %>
-                <%= button_to "Create Account", new_user_path, method: :get, class: "nav-button" %>
-                <%= button_to "Login", new_session_path, method: :get, class: "nav-button" %>
-              <% else %>
-                <%= button_to "My Profile", user_path(User.find_by(id: session[:user_id])), method: :get, class: "nav-button" %>
-                <%= button_to "My Listings", user_listings_path(User.find_by(id: session[:user_id])), method: :get, class: "nav-button" %>
-                <%= button_to "Create New Listing", new_listing_path, method: :get, class: "nav-button" %>
-                <%= button_to "Logout", {:controller=> "sessions", :action=> "destroy"}, :method => :delete, class: "nav-button" %>
-            <% end %><br>
-
-   </nav>
- <div class="header-1">  
- 
-      <h1>Buy Nothing Chicago</h1>
- 
-</div>
-  
-  
-    <% if flash.alert  %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
+<header>
+ <nav class = "nav-bar">
+  <%= button_to "Home", home_path, method: :get, class: "nav-button" %> 
+    <%= button_to "All Listings", listings_path, method: :get, class: "nav-button" %>
+    <% if !session[:user_id] %>
+      <%= button_to "Create Account", new_user_path, method: :get, class: "nav-button" %>
+      <%= button_to "Login", new_session_path, method: :get, class: "nav-button" %>
+    <% else %>
+      <%= button_to "My Profile", user_path(User.find_by(id: session[:user_id])), method: :get, class: "nav-button" %>
+      <%= button_to "My Listings", user_listings_path(User.find_by(id: session[:user_id])), method: :get, class: "nav-button" %>
+      <%= button_to "Create New Listing", new_listing_path, method: :get, class: "nav-button" %>
+      <%= button_to "Logout", {:controller=> "sessions", :action=> "destroy"}, :method => :delete, class: "nav-button" %>
+    <% end %><br>
+ </nav>
+   <div class="header-1">  
+     <h1>Buy Nothing Chicago</h1>
+   </div>
+</header>
+<body>
+  <% if flash.alert  %>
     <% flash.alert.each do |message| %>
     <li> <%= message %></li>
-      <% end %>
-    <% end %>
+  <% end %>
+  <% end %>  
+  <%= yield %>
+</body>
+<footer> 
 
-    <%= yield %>
-  </body>
+</footer>
 </html>
