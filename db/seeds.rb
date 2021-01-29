@@ -61,12 +61,19 @@ Category.create(name: "Miscellaneous", emoji: "✨")
 
 
 
-Listing.create(title: "Crockpot", description: "This is a crockpot that i do not want please come pick it up ASAP", category_id: 1, claimed: false, owner_id: 1)
-Listing.create(title: "Treadmill", description: "I dont use this treadmill anymore! Would love it to go to a good home.", category_id: 2, claimed: false, owner_id: 2)
-Listing.create(title: "Dishes", description: "New dish set, never used.", category_id: 1, claimed: false, owner_id: 2)
-Listing.create(title: "Clothes", description: "Womens clothes sizes small-medium, 6-8, lightly used", category_id: 3, claimed: false, owner_id: 2)
-Listing.create(title: "Clothes", description: "Mens clothes size medium.", category_id: 3, claimed: false, owner_id: 3)
-Listing.create(title: "Clothes", description: "womens clothes size medium.", category_id: 3, claimed: false, owner_id: 1)
+@crockpot = Listing.create(title: "Crockpot", description: "This is a crockpot that I do not want anymore because I got new one as a gift. It works great! Pick only, please!", category_id: 1, claimed: false, owner_id: 1)
+@crockpot.image.attach(io: File.open('app/assets/images/listings/crockpot.png'), filename: 'crockpot.png')
+@treadmill = Listing.create(title: "Treadmill", description: "I dont use this treadmill anymore! Would love it to go to a good home.", category_id: 2, claimed: false, owner_id: 2)
+@treadmill.image.attach(io: File.open('app/assets/images/listings/treadmill.png'), filename: 'treadmill.png')
+@dishes = Listing.create(title: "Dishes", description: "New dish set, never used. I got this as a gift, and I dont need it.", category_id: 1, claimed: false, owner_id: 2)
+@dishes.image.attach(io: File.open('app/assets/images/listings/dishes.png'), filename: 'dishes.png')
+@clothes1 = Listing.create(title: "Clothes", description: "Womens clothes sizes small-medium, 6-8, lightly used", category_id: 3, claimed: false, owner_id: 2)
+@clothes1.image.attach(io: File.open('app/assets/images/listings/wclothes.png'), filename: 'wclothes.png')
+@clothes2 = Listing.create(title: "Clothes", description: "Clothes from a pet-free, smoke-free home. Size medium.", category_id: 3, claimed: false, owner_id: 3)
+@clothes2.image.attach(io: File.open('app/assets/images/listings/wclothes.png'), filename: 'wclothes.png')
+@clothes3 = Listing.create(title: "Clothes", description: "womens clothes size medium.", category_id: 3, claimed: false, owner_id: 1)
+@clothes3.image.attach(io: File.open('app/assets/images/listings/wclothes.png'), filename: 'wclothes.png')
+
 
 Like.create(liker_id: 2, listing_id:1)
 Like.create(liker_id: 3, listing_id:1)
@@ -87,3 +94,6 @@ Like.create(liker_id: 2, listing_id:6)
 Like.create(liker_id: 3, listing_id:6)
 Like.create(liker_id: 4, listing_id:6)
 Like.create(liker_id: 5, listing_id:6)
+Like.create(liker_id: 5, listing_id:6)
+
+
