@@ -1,4 +1,4 @@
-<h1>Create a User</h1>
+<h1>Create a new account</h1>
 
 <% if @user.errors.any? %>
   <div id="error_explanation">
@@ -44,16 +44,24 @@
     <%= f.text_area :bio %>
     <br>
     <br>
-    <%= f.collection_select :location_id, Location.all, :id, :neighborhood, {prompt: "Select Neighborhood"} %> 
-  <br>
-  <br>
-   <%= f.label "Upload Profile Picture" %>
-    <%= f.file_field :image %>
+    <%= f.label "Upload Profile Picture" %>
+
 <br>
+    <label class="button-image">
+      <%= f.file_field :image, value: "", class: "active-storage-button" %>
+    </label>
 <br>
 
-<%= f.submit %>
+
+  <br>
+    <%= f.collection_select :location_id, Location.all, :id, :neighborhood, {prompt: "Select Neighborhood"}, class: "erb-button"  %> 
+  <br>
+  <br>
+
+
+<%= f.submit class: "erb-button" %>
 <% end %>
+<br>
 
 <h3>Already have an account?</h3>
-<%= button_to "Login", new_session_path, method: :get%>
+<%= button_to "Login", new_session_path, method: :get, class: "erb-button"%>
