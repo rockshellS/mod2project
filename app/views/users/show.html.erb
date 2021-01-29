@@ -1,15 +1,15 @@
-<h1><%= @user.name %></h1>
+<h1 class="profile"><%= @user.name %></h1>
 
 <% if @user.image.attached? %>
-    <%= image_tag url_for(@user.image) %> 
+    <div class='profile'><%= image_tag url_for(@user.image), class: "profile" %> </div>
 <% end %>
 
-<h4> Username: <%= @user.username %> </h4>
-<h4> Bio: <%= @user.bio %> </h4>
+<h3 class="profile"> @<%= @user.username %> </h3>
+<h5 class="profile"> <%= @user.bio %> </h5>
 <% if @user.id == session[:user_id]%>
-<h4> Contact Information: 
+<p class="profile"> Contact Information: 
   <%= @user.contact_info %>
-</h4>
+</p>
   <% end %>
 <br>
 
