@@ -1,5 +1,6 @@
-<h1>Update a Listing</h1>
+<%= stylesheet_link_tag 'listing' %>
 
+<h1>Update a Listing</h1>
 
 <div>
    <% if @listing.image.attached? %>
@@ -7,9 +8,5 @@
   <% end %>
   
 </div>
-
-
-
-
 
 <%= render 'form' %>

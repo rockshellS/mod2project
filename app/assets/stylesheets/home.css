@@ -1,0 +1,30 @@
+.home-header {
+    padding-top: 15%;
+}
+
+.home-main {
+position: relative;
+padding-top: 5%;
+}
+
+.ul {
+    display: inline-block;
+    text-align: left;
+    color: #23C797;
+    font-size: 18px;
+    font-family: 'Roboto';
+    display: table;
+    margin: 0 auto;
+    border: 1px solid black;
+}
+
+div.home-header h4 {
+    font-size: 40px;
+}
+
+.rules {
+    text-align: center;
+    color: #043D30;
+    font-family: 'Roboto';
+    font-size: 35px;
+    }

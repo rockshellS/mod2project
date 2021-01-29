@@ -1,16 +1,23 @@
 
+<%= stylesheet_link_tag "home" %>
+
+<div class="home-header">
 <header class="header-2">
 <h4>Welcome to <%= User.find_by(id: session[:user_id]).location.neighborhood%>'s Buy Nothing Chicago community, <%= User.find_by(id: session[:user_id]).name %>!</h4>
 </header>
-<br>
+</div>
+<div class="home-main">
+
 <h3 class="rules"> We're glad you're here! Below you will find rules to particpate in our community. </h3>
-<div class = "rules-list">
-<ul class = "ul-1">
+<div class="ul">
+<ul>
 <li>Keep it legal</li>
 <li>No discrimination</li>
 <li>No buying, selling, or trading allowed</li>
 <li>Treat your neighbors with kindness and respect</li>
 <li>All members participate at their own risk</li>
 </ul>
+</div>
+
 </div>
 <footer class='footer-1'><footer>
