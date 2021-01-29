@@ -1,12 +1,17 @@
-<h2><%= @listing.title %></h2>
-<p>
+<h1 class="listing-show"><%= @listing.title %></h1>
+<br>
+<div class="listing-show"><% if @listing.image.attached? %>
+    <%= image_tag url_for(@listing.image) %> 
+<% end %></div>
+<br>
+<p class="listing-show">
   <%= @listing.description %>
 </p>
-<p> Category: 
+<p class="listing-show"> Category: 
   <%= @listing.category.name %>
 </p>
 
-<p> Status: 
+<p class="listing-show"> Status: 
   <% if @listing.claimed %>
     <%= "Item has been claimed" %>
     <% else %>
@@ -14,15 +19,13 @@
   <% end %>
   <br>
 </p>
-<p> Owner: 
+<p class="listing-show"> Owner: 
   <%= link_to @listing.owner.name, user_path(@listing.owner) %>
   <br>
 </p>
 
 
-<% if @listing.image.attached? %>
-    <%= image_tag url_for(@listing.image) %> 
-<% end %>
+
 
 <% if @listing.recipient %>
 
